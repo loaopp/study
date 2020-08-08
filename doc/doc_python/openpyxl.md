@@ -25,7 +25,7 @@
 
 2. .xlsm
 
-		wb = load_workbook("file_name.xlsm", keet_vba=True)
+		wb = load_workbook("file_name.xlsm", keep_vba=True)
 
 3. 읽기 전용
 
@@ -73,10 +73,10 @@
 			for cell in row:
 				print(cell)
 
-		<Cell 'test1'.C1>
-		<Cell 'test1'.D1>
-		<Cell 'test1'.C2>
-		<Cell 'test1'.D2>
+		<Cell Sheet1.C1>
+		<Cell Sheet1.D1>
+		<Cell Sheet1.C2>
+		<Cell Sheet1.D2>
 
 	Worksheet.iter_cols()
 
