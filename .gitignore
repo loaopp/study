@@ -2,3 +2,5 @@
 */
 !pdf/
 !doc/
+!*/*.c
+!*/Makefile
