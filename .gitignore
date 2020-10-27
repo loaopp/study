@@ -1,6 +1,2 @@
 .vscode/
-*/
-!pdf/
-!doc/
-!c/**/*.c
-!Makefile
+*.exe
