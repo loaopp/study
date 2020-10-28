@@ -4,68 +4,46 @@
 #include <string.h>
 #include <ctype.h>
 
-int		ft_memcmp(const void *s1, const void *s2, size_t n)
+char	*ft_strrchr(const char *s, int c)
 {
-	unsigned char	*p1;
-	unsigned char	*p2;
-	size_t			i;
+	char	*p;
 
-	p1 = (unsigned char*)s1;
-	p2 = (unsigned char*)s2;
-	i = 0;
-	while (i < n)
+	p = 0;
+	while (*s)
 	{
-		if (*(p1 + i) - *(p2 + i))
-			return (*(p1 + i) - *(p2 + i));
-		i++;
+		if (*s == c)
+			p = (char*)s;
+		s++;
 	}
+	if (*s == '\0')
+		return ((char*)s);
+	return (p);
+}
+
+
+char	*ft_strchr(const char *s, int c)
+{
+	while (*s)
+	{
+		if (*s == c)
+			return ((char*)s);
+		s++;
+	}
+	if (*s == c)
+		return ((char*)s);
 	return (0);
 }
 
-
-size_t	ft_strlen(const char *s)
-{
-	size_t	i;
-
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
-}
-
-
-char	*ft_strnstr(const char *big, const char *little, size_t len)
-{
-	size_t	len_b;
-	size_t	len_l;
-	size_t	i;
-
-	if (little == 0)
-		return ((char*)big);
-	len_b = ft_strlen(big);
-	len_l = ft_strlen(little);
-	if (len_b < len_l || len < len_l)
-		return (0);
-	if (len_b < len)
-		i = len_b;
-	else
-		i = len;
-	while (len_l <= i--)
-	{
-		if (ft_memcmp(big, little, len_l) == 0)
-			return ((char*)big);
-		big++;
-	}
-}
-
-
 int main()
 {
-	char str1[10] = "012345";
-	char str2[10] = "23";
+	char *str = "test abcmanc12345";
+	char *p;
 
-	puts(memcpy(str1+1,str1, 5));
+	p = ft_strchr(str, '\0');
 
+
+	printf("%p\n", str);
+	printf("%p\n", p);
 
 	return 0;
 }

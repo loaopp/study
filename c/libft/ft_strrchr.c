@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtchr.c                                       :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yejeon <yejeon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/21 21:58:32 by yejeon            #+#    #+#             */
-/*   Updated: 2020/10/21 21:58:32 by yejeon           ###   ########.fr       */
+/*   Created: 2020/10/28 23:02:27 by yejeon            #+#    #+#             */
+/*   Updated: 2020/10/28 23:02:27 by yejeon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strrchr(const char *s, int c)
 {
 	char	*p;
-	char	*result;
 
-	p = (char*)s;
-	result = 0;
-	while (*p)
+	p = 0;
+	while (*s)
 	{
-		if (*p == c)
-			result = p;
-		p++;
+		if (*s == c)
+			p = (char*)s;
+		s++;
 	}
-	return (result);
+	if (*s == '\0')
+		return ((char*)s);
+	return (p);
 }
