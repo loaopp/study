@@ -6,7 +6,7 @@
 /*   By: yejeon <yejeon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/18 13:37:42 by yejeon            #+#    #+#             */
-/*   Updated: 2020/10/18 13:37:42 by yejeon           ###   ########.fr       */
+/*   Updated: 2020/10/29 11:15:00 by yejeon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ int		ft_get_num(char *str)
 			num += *str - '0';
 		}
 		else
-				break;
+			break ;
 		str++;
 	}
 	return (num);

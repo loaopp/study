@@ -6,13 +6,13 @@
 /*   By: yejeon <yejeon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/18 13:48:32 by yejeon            #+#    #+#             */
-/*   Updated: 2020/10/18 13:48:32 by yejeon           ###   ########.fr       */
+/*   Updated: 2020/10/29 11:15:51 by yejeon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
 {
-	char    *p;
+	char	*p;
 
 	p = src;
 	if (size)

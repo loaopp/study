@@ -6,7 +6,7 @@
 /*   By: yejeon <yejeon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/21 18:39:11 by yejeon            #+#    #+#             */
-/*   Updated: 2020/10/21 18:39:11 by yejeon           ###   ########.fr       */
+/*   Updated: 2020/10/29 11:14:22 by yejeon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,5 @@ void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 	if (dest < src)
 		return (t_cpy_head(dest, src, c, n));
 	else
-		return (ft_cpy_tail(dest, src, c ,n));
+		return (ft_cpy_tail(dest, src, c, n));
 }
