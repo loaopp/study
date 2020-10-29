@@ -4,35 +4,6 @@
 #include <string.h>
 #include <ctype.h>
 
-char	*ft_strrchr(const char *s, int c)
-{
-	char	*p;
-
-	p = 0;
-	while (*s)
-	{
-		if (*s == c)
-			p = (char*)s;
-		s++;
-	}
-	if (*s == '\0')
-		return ((char*)s);
-	return (p);
-}
-
-
-char	*ft_strchr(const char *s, int c)
-{
-	while (*s)
-	{
-		if (*s == c)
-			return ((char*)s);
-		s++;
-	}
-	if (*s == c)
-		return ((char*)s);
-	return (0);
-}
 
 int main()
 {
