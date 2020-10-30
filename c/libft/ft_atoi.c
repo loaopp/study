@@ -10,66 +10,31 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_trim(char *str)
+#include "libft.h"
+
+int		ft_isspace(char c)
 {
-	while (*str)
-	{
-		if (!(*str == ' ' || *str == '\n' || *str == '\t' ||
-			*str == '\r' || *str == '\v' || *str == '\f'))
-			return (str);
-		str++;
-	}
-	return (0);
+	return (c == ' ' || c == '\n' || c == '\t' ||
+			c == '\v' || c == '\f' || c == '\r');
 }
 
-int		ft_signs(char **str)
+int		ft_atoi(const char *nptr)
 {
-	char	*p;
 	int		sign;
+	int		num;
 
+	while (*nptr && ft_isspace(*nptr))
+		nptr++;
 	sign = 1;
-	p = *str;
-	while (*p)
-	{
-		if (*p == '-')
-			sign *= -1;
-		else if (*p != '+')
-		{
-			*str = p;
-			return (sign);
-		}
-		p++;
-	}
-	*str = p;
-	return (0);
-}
-
-int		ft_get_num(char *str)
-{
-	int		num;
-
+	if (*nptr == '-')
+		sign = -1;
+	if (*nptr == '-' || *nptr == '+')
+		nptr++;
 	num = 0;
-	while (*str)
+	while (*nptr && ft_isdigit(*nptr))
 	{
-		if ('0' <= *str && *str <= '9')
-		{
-			num *= 10;
-			num += *str - '0';
-		}
-		else
-			break ;
-		str++;
+		num = num * 10 + (*nptr - '0');
+		nptr++;
 	}
-	return (num);
-}
-
-int		ft_atoi(char *str)
-{
-	int		num;
-	int		sign;
-
-	str = ft_trim(str);
-	sign = ft_signs(&str);
-	num = ft_get_num(str);
 	return (num * sign);
 }
