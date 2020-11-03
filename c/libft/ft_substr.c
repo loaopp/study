@@ -17,10 +17,12 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	len_s;
 	size_t	size;
 
+	if (s == 0)
+		return (0);
 	len_s = ft_strlen(s);
 	if (len_s - start < len)
-		size = len_s - start + 1;
+		size = len_s - start;
 	else
-		size = len + 1;
-	return ((char*)ft_memcpy(ft_calloc(sizeof(char), size), s + start, size));
+		size = len;
+	return ((char*)ft_memcpy(ft_calloc(sizeof(char), size + 1), s + start, size));
 }

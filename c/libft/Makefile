@@ -21,7 +21,7 @@ $(TARGET):	$(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $@
 
 *.o:	*.c
-		gcc ${CFLAGS} -c *.c
+	gcc ${CFLAGS} -c *.c
 
 clean:
 	rm $(OBJS) $(TARGET)

@@ -18,6 +18,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	char	*start;
 	char	*end;
 
+	if (s1 == 0)
+		return (0);
 	p = (char*)s1;
 	start = 0;
 	end = 0;
@@ -35,26 +37,5 @@ char	*ft_strtrim(char const *s1, char const *set)
 		start = (char*)s1;
 	if (0 == end)
 		end = (char*)s1;
-	return (ft_substr(s1, start - s1, end - start));
-}
-#include <stdio.h>
-
-int	main()
-{
-	char *set = " ";
-	char *p;
-
-	p = ft_strtrim("asd", set);
-	printf("%p : '%s'\n", p, p);
-	p = ft_strtrim("  asd  ", set);
-	printf("%p : '%s'\n", p, p);
-	p = ft_strtrim(" asd as ", set);
-	printf("%p : '%s'\n", p, p);
-	p = ft_strtrim("", set);
-	printf("%p : '%s'\n", p, p);
-	p = ft_strtrim("   ", set);
-	printf("%p : '%s'\n", p, p);
-	p = ft_strtrim(0, set);
-
-	return (0);
+	return (ft_substr(s1, start - s1, end - start + 1));
 }
