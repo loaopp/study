@@ -7,14 +7,12 @@
 
 int main()
 {
-	char *str = "test abcmanc12345";
-	char *p;
-
-	p = ft_strchr(str, '\0');
-
-
-	printf("%p\n", str);
-	printf("%p\n", p);
-
+	char *str = "test abcm";
+	char p[10] = "123456789";
+	char *a;
+	p[5] = '\0';
+	a = memccpy(p, str, '5', 30);
+	puts(p);
+	puts(a);
 	return 0;
 }
