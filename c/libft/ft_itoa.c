@@ -12,13 +12,23 @@
 
 #include "libft.h"
 
-static int		ft_isspace(char c)
-{
-	return (c == ' ' || c == '\n' || c == '\t' ||
-			c == '\v' || c == '\f' || c == '\r');
-}
-
 char	*ft_itoa(int n)
 {
+	char	temp[12];
+	int		sign;
+	int		i;
 
+	i = 0;
+	sign = 1;
+	if (n < 0)
+		sign = -1;
+	while (n)
+	{
+		temp[i++] = (n % 10) * sign + '0';
+		n = n / 10;
+	}
+	if (sign < 0)
+		temp[i++] = '-';
+	temp[i] = 0;
+	return (ft_strdup(ft_strrev(temp)));
 }
