@@ -6,7 +6,7 @@
 /*   By: yejeon <yejeon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/29 12:29:08 by yejeon            #+#    #+#             */
-/*   Updated: 2020/11/06 23:57:45 by yejeon           ###   ########.fr       */
+/*   Updated: 2020/11/07 00:02:22 by yejeon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		size = len_s - start;
 	else
 		size = len;
-	return ((char*)ft_memcpy(ft_calloc(sizeof(char), size + 1), s + start, size));
+	return ((char*)ft_memcpy(ft_calloc(sizeof(char), size + 1), \
+			s + start, size));
 }

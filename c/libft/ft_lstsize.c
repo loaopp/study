@@ -6,7 +6,7 @@
 /*   By: yejeon <yejeon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/04 02:31:38 by yejeon            #+#    #+#             */
-/*   Updated: 2020/11/06 23:56:32 by yejeon           ###   ########.fr       */
+/*   Updated: 2020/11/07 00:01:29 by yejeon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int		ft_lstsize(t_list *lst)
 	int		cnt;
 
 	cnt = 0;
-	while(lst)
+	while (lst)
 	{
 		lst = lst->next;
 		cnt++;
