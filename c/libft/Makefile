@@ -13,6 +13,7 @@
 CC		= gcc
 CFLAGS	= -Wall -Werror -Wextra
 TARGET	= a.out
+NAME	= libft.a
 OBJS	= *.o
 
 all:	$(TARGET)
@@ -24,4 +25,9 @@ $(TARGET):	$(OBJS)
 	gcc ${CFLAGS} -c *.c
 
 clean:
-	rm $(OBJS) $(TARGET)
+	rm -f $(OBJS) $(TARGET)
+
+fclean:	clean
+	rm -f $(NAME)
+
+re:	clean all

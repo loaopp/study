@@ -1,28 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yejeon <yejeon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/04 09:56:29 by yejeon            #+#    #+#             */
-/*   Updated: 2020/11/04 09:56:29 by yejeon           ###   ########.fr       */
+/*   Created: 2020/11/06 21:45:02 by yejeon            #+#    #+#             */
+/*   Updated: 2020/11/06 21:45:02 by yejeon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstclear(t_list **lst, void (*del)(void*))
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	t_list	*node;
-	t_list	*next;
+	unsigned char	*p1;
+	unsigned char	*p2;
+	size_t			i;
 
-	node = *lst;
-	while (node)
+	p1 = (unsigned char*)dest;
+	p2 = (unsigned char*)src;
+	i = 0;
+	if (dest < src)
 	{
-		next = node->next;
-		ft_lstdelone(node, del);
-		node = next;
+		while (i < n)
+		{
+			p1[i] = p2[i];
+			i++;
+		}
 	}
-	*lst = 0;
+	else
+	{
+		while (n--)
+			p1[n] = p2[n];
+	}
+	return (dest);
 }
