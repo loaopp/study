@@ -6,7 +6,7 @@
 /*   By: yejeon <yejeon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/03 23:37:31 by yejeon            #+#    #+#             */
-/*   Updated: 2020/11/06 23:56:05 by yejeon           ###   ########.fr       */
+/*   Updated: 2020/11/08 08:24:36 by yejeon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,10 @@ char	*ft_itoa(int n)
 	int		i;
 
 	i = 0;
-	sign = 1;
 	if (n < 0)
 		sign = -1;
+	else
+		sign = 1;
 	while (n)
 	{
 		temp[i++] = (n % 10) * sign + '0';
@@ -29,6 +30,8 @@ char	*ft_itoa(int n)
 	}
 	if (sign < 0)
 		temp[i++] = '-';
+	if (0 == i)
+		temp[i++] = '0';
 	temp[i] = 0;
-	return (ft_strdup(ft_strrev(temp)));
+	return (ft_strdup(ft_strrev_bonus(temp)));
 }
