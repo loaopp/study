@@ -6,7 +6,7 @@
 /*   By: yejeon <yejeon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/03 22:28:12 by yejeon            #+#    #+#             */
-/*   Updated: 2020/11/06 23:57:04 by yejeon           ###   ########.fr       */
+/*   Updated: 2020/11/11 07:42:53 by yejeon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ char		**ft_split(char const *s, char c)
 	char	*pos;
 	size_t	i;
 
-	list = (char**)ft_calloc(ft_get_count(s, c), sizeof(char*));
+	list = (char**)ft_calloc(ft_get_count(s, c) + 1, sizeof(char*));
 	if (list == 0)
 		return (0);
 	i = 0;
@@ -58,8 +58,7 @@ char		**ft_split(char const *s, char c)
 			return (0);
 		}
 		i++;
-		pos = p + 1;
-		p++;
+		pos = ++p;
 	}
 	list[i] = ft_substr(s, pos - s, -1);
 	return (list);

@@ -6,17 +6,11 @@
 /*   By: yejeon <yejeon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/18 13:37:42 by yejeon            #+#    #+#             */
-/*   Updated: 2020/11/07 00:04:26 by yejeon           ###   ########.fr       */
+/*   Updated: 2020/11/11 01:24:35 by yejeon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static int	ft_isspace(char c)
-{
-	return (c == ' ' || c == '\n' || c == '\t' ||
-			c == '\v' || c == '\f' || c == '\r');
-}
 
 int			ft_atoi(const char *nptr)
 {

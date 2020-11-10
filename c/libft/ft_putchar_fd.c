@@ -6,7 +6,7 @@
 /*   By: yejeon <yejeon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/04 00:57:12 by yejeon            #+#    #+#             */
-/*   Updated: 2020/11/06 23:56:53 by yejeon           ###   ########.fr       */
+/*   Updated: 2020/11/11 06:03:03 by yejeon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,5 @@
 void	ft_putchar_fd(char c, int fd)
 {
 	if (0 < fd)
-		write(fd, &c, 1);
+		write(fd, &c, sizeof(char));
 }

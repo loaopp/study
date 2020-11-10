@@ -6,7 +6,7 @@
 /*   By: yejeon <yejeon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/03 18:47:33 by yejeon            #+#    #+#             */
-/*   Updated: 2020/11/06 23:57:42 by yejeon           ###   ########.fr       */
+/*   Updated: 2020/11/11 02:42:33 by yejeon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	char	*start;
 	char	*end;
 
-	if (s1 == 0)
+	if (s1 == 0 )
 		return (0);
 	p = (char*)s1;
 	start = 0;
@@ -33,9 +33,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 		}
 		p++;
 	}
-	if (0 == start)
-		start = (char*)s1;
-	if (0 == end)
-		end = (char*)s1;
-	return (ft_substr(s1, start - s1, end - start + 1));
+	if (start >= end)
+		return (ft_strdup(""));
+	else
+		return (ft_substr(s1, start - s1, end - start + 1));
 }

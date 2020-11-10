@@ -1,25 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   ft_isspace.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yejeon <yejeon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/04 05:43:02 by yejeon            #+#    #+#             */
-/*   Updated: 2020/11/11 01:54:44 by yejeon           ###   ########.fr       */
+/*   Created: 2020/11/11 00:38:00 by yejeon            #+#    #+#             */
+/*   Updated: 2020/11/11 01:46:15 by yejeon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	ft_lstadd_back(t_list **lst, t_list *new)
+int		ft_isspace(int c)
 {
-	if (lst == 0 || new == 0)
-		return ;
-	if (*lst == 0)
-	{
-		*lst = new;
-		return ;
-	}
-	ft_lstlast(*lst)->next = new;
+	return (c == ' ' || c == '\n' || c == '\t' ||
+			c == '\v' || c == '\f' || c == '\r');
 }

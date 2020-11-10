@@ -6,7 +6,7 @@
 /*   By: yejeon <yejeon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/06 21:45:02 by yejeon            #+#    #+#             */
-/*   Updated: 2020/11/06 23:56:47 by yejeon           ###   ########.fr       */
+/*   Updated: 2020/11/11 04:30:06 by yejeon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	unsigned char	*p2;
 	size_t			i;
 
+	if (!dest && !src)
+		return (0);
 	p1 = (unsigned char*)dest;
 	p2 = (unsigned char*)src;
 	i = 0;
