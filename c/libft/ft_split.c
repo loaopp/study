@@ -6,7 +6,7 @@
 /*   By: yejeon <yejeon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/03 22:28:12 by yejeon            #+#    #+#             */
-/*   Updated: 2020/11/11 10:37:23 by yejeon           ###   ########.fr       */
+/*   Updated: 2020/11/11 22:26:38 by yejeon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,16 +70,18 @@ char		**ft_split(char const *s, char c)
 	size_t	cnt;
 	size_t	i;
 
+	if (0 == s)
+		return (0);
 	cnt = ft_get_count(s, c);
 	list = (char**)ft_calloc(cnt + 1, sizeof(char*));
-	if (list == 0)
+	if (0 == list)
 		return (0);
 	i = 0;
 	p = (char*)s;
 	while (i < cnt)
 	{
 		list[i] = ft_get_word(&p, c);
-		if (list[i] == 0)
+		if (0 == list[i])
 		{
 			ft_free((void**)list);
 			return (0);

@@ -6,7 +6,7 @@
 /*   By: yejeon <yejeon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/04 01:08:14 by yejeon            #+#    #+#             */
-/*   Updated: 2020/11/06 23:56:56 by yejeon           ###   ########.fr       */
+/*   Updated: 2020/11/11 22:25:45 by yejeon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_putendl_fd(char *s, int fd)
 {
+	if (fd <= 0)
+		return ;
 	ft_putstr_fd(s, fd);
 	write(fd, "\n", 1);
 }

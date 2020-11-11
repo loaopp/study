@@ -51,6 +51,7 @@ FILES = ft_memset \
 		ft_putstr_fd \
 		ft_putendl_fd \
 		ft_putnbr_fd \
+		ft_isspace_bonus \
 		ft_strrev_bonus
 
 FILES_B = 	ft_lstnew \
