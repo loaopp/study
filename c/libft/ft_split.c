@@ -6,7 +6,7 @@
 /*   By: yejeon <yejeon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/03 22:28:12 by yejeon            #+#    #+#             */
-/*   Updated: 2020/11/11 07:42:53 by yejeon           ###   ########.fr       */
+/*   Updated: 2020/11/11 10:37:23 by yejeon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,43 @@
 
 static int	ft_get_count(const char *s, char c)
 {
-	size_t	cnt;
+	size_t			flag;
+	size_t			cnt;
+	unsigned char	ch;
 
+	flag = 1;
 	cnt = 0;
+	ch = (unsigned char)c;
 	while (*s)
 	{
-		if (*s == c)
+		if (flag && *s != ch)
+		{
 			cnt++;
+			flag = 0;
+		}
+		else if(!flag && *s == ch)
+			flag = 1;
 		s++;
 	}
-	return (cnt + 1);
+	return (cnt);
+}
+
+static char	*ft_get_word(char **pos, unsigned char c)
+{
+	char	*start;
+
+	start = 0;
+	while (**pos)
+	{
+		if (!start && **pos != c)
+			start = *pos;
+		else if (start && **pos == c)
+			break;
+		(*pos)++;
+	}
+	if (start)
+		return (ft_substr(start, 0, *pos - start));
+	return (0);
 }
 
 static void	ft_free(void **list)
@@ -40,26 +67,24 @@ char		**ft_split(char const *s, char c)
 {
 	char	**list;
 	char	*p;
-	char	*pos;
+	size_t	cnt;
 	size_t	i;
 
-	list = (char**)ft_calloc(ft_get_count(s, c) + 1, sizeof(char*));
+	cnt = ft_get_count(s, c);
+	list = (char**)ft_calloc(cnt + 1, sizeof(char*));
 	if (list == 0)
 		return (0);
 	i = 0;
 	p = (char*)s;
-	pos = p;
-	while (0 != (p = ft_strchr(p, c)))
+	while (i < cnt)
 	{
-		list[i] = ft_substr(s, pos - s, p - pos);
+		list[i] = ft_get_word(&p, c);
 		if (list[i] == 0)
 		{
 			ft_free((void**)list);
 			return (0);
 		}
 		i++;
-		pos = ++p;
 	}
-	list[i] = ft_substr(s, pos - s, -1);
 	return (list);
 }
