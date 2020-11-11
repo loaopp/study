@@ -6,7 +6,7 @@
 /*   By: yejeon <yejeon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/18 14:04:01 by yejeon            #+#    #+#             */
-/*   Updated: 2020/11/11 02:49:52 by yejeon           ###   ########.fr       */
+/*   Updated: 2020/11/11 22:31:10 by yejeon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ typedef struct		s_list
 	struct s_list	*next;
 }					t_list;
 
-int					ft_isspace(int c);
 int					ft_isdigit(int c);
 int					ft_isalnum(int c);
 int					ft_isalpha(int c);
@@ -30,6 +29,7 @@ int					ft_isascii(int c);
 int					ft_isprint(int c);
 int					ft_tolower(int c);
 int					ft_toupper(int c);
+int					ft_isspace_bonus(int c);
 int					ft_atoi(const char *nptr);
 
 void				*ft_memset(void *s, int c, size_t n);
