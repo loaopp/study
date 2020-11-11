@@ -6,21 +6,41 @@
 /*   By: yejeon <yejeon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/04 01:15:23 by yejeon            #+#    #+#             */
-/*   Updated: 2020/11/11 22:23:40 by yejeon           ###   ########.fr       */
+/*   Updated: 2020/11/12 07:14:57 by yejeon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr_fd(int n, int fd)
+static void	ft_my_itoa(char *buf, int n)
 {
-	char	*nbr;
+	int		sign;
+	int		i;
+
+	i = 0;
+	if (n < 0)
+		sign = -1;
+	else
+		sign = 1;
+	while (n)
+	{
+		buf[i++] = (n % 10) * sign + '0';
+		n = n / 10;
+	}
+	if (sign < 0)
+		buf[i++] = '-';
+	if (0 == i)
+		buf[i++] = '0';
+	buf[i] = 0;
+	ft_strrev_bonus(buf);
+}
+
+void		ft_putnbr_fd(int n, int fd)
+{
+	char	buf[12];
 
 	if (fd <= 0)
 		return ;
-	nbr = ft_itoa(n);
-	if (0 == nbr)
-		return ;
-	write(fd, nbr, ft_strlen(nbr));
-	free(nbr);
+	ft_my_itoa(&buf, n);
+	write(fd, buf, ft_strlen(buf));
 }

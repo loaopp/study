@@ -6,7 +6,7 @@
 /*   By: yejeon <yejeon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/03 18:47:33 by yejeon            #+#    #+#             */
-/*   Updated: 2020/11/11 02:42:33 by yejeon           ###   ########.fr       */
+/*   Updated: 2020/11/11 22:48:21 by yejeon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	char	*start;
 	char	*end;
 
-	if (s1 == 0 )
+	if (s1 == 0)
 		return (0);
 	p = (char*)s1;
 	start = 0;

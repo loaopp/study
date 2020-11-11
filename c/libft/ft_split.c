@@ -6,7 +6,7 @@
 /*   By: yejeon <yejeon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/03 22:28:12 by yejeon            #+#    #+#             */
-/*   Updated: 2020/11/11 22:26:38 by yejeon           ###   ########.fr       */
+/*   Updated: 2020/11/11 22:48:50 by yejeon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static int	ft_get_count(const char *s, char c)
 			cnt++;
 			flag = 0;
 		}
-		else if(!flag && *s == ch)
+		else if (!flag && *s == ch)
 			flag = 1;
 		s++;
 	}
@@ -45,7 +45,7 @@ static char	*ft_get_word(char **pos, unsigned char c)
 		if (!start && **pos != c)
 			start = *pos;
 		else if (start && **pos == c)
-			break;
+			break ;
 		(*pos)++;
 	}
 	if (start)
