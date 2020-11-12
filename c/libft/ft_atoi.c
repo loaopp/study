@@ -6,7 +6,7 @@
 /*   By: yejeon <yejeon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/18 13:37:42 by yejeon            #+#    #+#             */
-/*   Updated: 2020/11/11 10:57:31 by yejeon           ###   ########.fr       */
+/*   Updated: 2020/11/12 20:39:15 by yejeon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,9 @@ int			ft_atoi(const char *nptr)
 	while (*nptr && ft_isspace_bonus(*nptr))
 		nptr++;
 	sign = 1;
-	if (*nptr == '-')
-		sign = -1;
 	if (*nptr == '-' || *nptr == '+')
-		nptr++;
+		if (*nptr++ == '-')
+			sign = -1;
 	num = 0;
 	while (*nptr && ft_isdigit(*nptr))
 	{

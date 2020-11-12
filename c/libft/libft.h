@@ -6,7 +6,7 @@
 /*   By: yejeon <yejeon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/18 14:04:01 by yejeon            #+#    #+#             */
-/*   Updated: 2020/11/11 22:31:10 by yejeon           ###   ########.fr       */
+/*   Updated: 2020/11/13 01:24:15 by yejeon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int					ft_toupper(int c);
 int					ft_isspace_bonus(int c);
 int					ft_atoi(const char *nptr);
 
-void				*ft_memset(void *s, int c, size_t n);
+void				*ft_memset(void *b, int c, size_t len);
 void				ft_bzero(void *s, size_t n);
 void				*ft_memccpy(void *dest, const void *src, int c, size_t n);
 void				*ft_memchr(const void *s, int c, size_t n);
@@ -52,7 +52,7 @@ char				*ft_substr(char const *s, unsigned int start, size_t len);
 char				*ft_strrev_bonus(char *s);
 
 void				*ft_calloc(size_t count, size_t size);
-char				*ft_strdup(const char *s1);
+char				*ft_strdup(const char *s);
 
 char				*ft_substr(char const *s, unsigned int start, size_t len);
 char				*ft_strjoin(char const *s1, char const *s2);

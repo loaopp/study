@@ -6,7 +6,7 @@
 /*   By: yejeon <yejeon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/18 13:43:41 by yejeon            #+#    #+#             */
-/*   Updated: 2020/11/06 23:57:17 by yejeon           ###   ########.fr       */
+/*   Updated: 2020/11/13 01:23:43 by yejeon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,22 @@
 
 size_t	ft_strlcat(char *dest, char *src, size_t size)
 {
-	size_t	i;
-	size_t	j;
+	size_t	len_d;
+	size_t	len_s;
+	size_t	len_copy;
 
-	j = 0;
-	i = 0;
-	while (dest[i])
-		i++;
-	if (i < size)
+	len_d = ft_strlen(dest);
+	len_s = ft_strlen(src);
+	if (len_d + 1 < size)
 	{
-		while (src[j] && (i + j < size))
-		{
-			dest[i + j] = src[j];
-			j++;
-		}
-		if (i + j == size)
-			dest[size - 1] = 0;
-		else
-			dest[i + j] = 0;
+		len_copy = size - len_d - 1;
+		if (len_s < len_copy)
+			len_copy = len_s;
+		ft_memmove(dest + len_d, src, len_copy);
+		*(dest + len_d + len_copy) = 0;
 	}
-	while (src[j])
-		j++;
-	if (i < size)
-		return (i + j);
+	if (len_d < size)
+		return (len_d + len_s);
 	else
-		return (size + j);
+		return (size + len_s);
 }

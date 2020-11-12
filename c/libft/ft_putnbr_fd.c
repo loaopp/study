@@ -6,7 +6,7 @@
 /*   By: yejeon <yejeon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/04 01:15:23 by yejeon            #+#    #+#             */
-/*   Updated: 2020/11/12 07:14:57 by yejeon           ###   ########.fr       */
+/*   Updated: 2020/11/12 07:20:16 by yejeon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,6 @@ void		ft_putnbr_fd(int n, int fd)
 
 	if (fd <= 0)
 		return ;
-	ft_my_itoa(&buf, n);
+	ft_my_itoa(buf, n);
 	write(fd, buf, ft_strlen(buf));
 }
