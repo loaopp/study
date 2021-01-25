@@ -6,7 +6,7 @@
 /*   By: yejeon <yejeon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/29 12:29:08 by yejeon            #+#    #+#             */
-/*   Updated: 2020/11/11 07:00:10 by yejeon           ###   ########.fr       */
+/*   Updated: 2020/11/20 09:44:07 by yejeon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,10 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	if (s == 0)
 		return (0);
-	if (ft_strlen(s) <= start)
+	len_s = ft_strlen(s);
+	if (len_s <= start)
 		return (ft_strdup(""));
-	len_s = ft_strlen(s + start);
+	len_s += start;
 	if (len_s < len)
 		size = len_s;
 	else

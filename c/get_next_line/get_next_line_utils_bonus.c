@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*   get_next_line_utils_bonus.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yejeon <yejeon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/14 08:26:21 by yejeon            #+#    #+#             */
-/*   Updated: 2021/01/20 13:28:44 by yejeon           ###   ########.fr       */
+/*   Created: 2021/01/25 16:35:49 by yejeon            #+#    #+#             */
+/*   Updated: 2021/01/25 16:38:34 by yejeon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {

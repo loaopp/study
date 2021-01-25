@@ -6,7 +6,7 @@
 /*   By: yejeon <yejeon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 23:02:27 by yejeon            #+#    #+#             */
-/*   Updated: 2020/11/06 23:57:36 by yejeon           ###   ########.fr       */
+/*   Updated: 2020/11/21 00:45:13 by yejeon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strrchr(const char *s, int c)
 			p = (char*)s;
 		s++;
 	}
-	if (*s == c)
+	if (0 == c)
 		p = (char*)s;
 	return (p);
 }
