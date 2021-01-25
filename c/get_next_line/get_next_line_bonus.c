@@ -6,7 +6,7 @@
 /*   By: yejeon <yejeon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/25 16:35:47 by yejeon            #+#    #+#             */
-/*   Updated: 2021/01/25 16:56:10 by yejeon           ###   ########.fr       */
+/*   Updated: 2021/01/25 19:59:51 by yejeon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int		ft_set_line(char **str, char **line, ssize_t size)
 		*pos = 0;
 		temp = *str;
 		*line = ft_strdup(*str);
-		*str = ft_strdup (pos + 1);
+		*str = ft_strdup(pos + 1);
 		if (temp)
 			free(temp);
 		return (1);

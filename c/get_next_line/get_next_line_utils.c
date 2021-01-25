@@ -6,7 +6,7 @@
 /*   By: yejeon <yejeon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/14 08:26:21 by yejeon            #+#    #+#             */
-/*   Updated: 2021/01/20 13:28:44 by yejeon           ###   ########.fr       */
+/*   Updated: 2021/01/25 19:59:50 by yejeon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	unsigned char	*d;
 	unsigned char	*s;
-	size_t	i;
+	size_t			i;
 
 	if (dest == 0 || src == 0)
 		return (0);
-	d = (unsigned char*) dest;
-	s = (unsigned char*) src;
+	d = (unsigned char*)dest;
+	s = (unsigned char*)src;
 	i = 0;
 	while (i < n)
 	{
@@ -90,4 +90,3 @@ char	*ft_strchr(const char *s, unsigned char c)
 		return ((char*)s);
 	return (0);
 }
-

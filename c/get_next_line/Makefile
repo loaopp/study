@@ -6,13 +6,13 @@
 #    By: yejeon <yejeon@student.42seoul.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/14 09:49:10 by yejeon            #+#    #+#              #
-#    Updated: 2021/01/20 15:03:18 by yejeon           ###   ########.fr        #
+#    Updated: 2021/01/25 19:59:49 by yejeon           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		=	get_next_line.out
 CC			=	gcc
-CFLAGS		=	-Wall -Werror -Wextra -g
+CFLAGS		=	-Wall -Werror -Wextra
 DIR_SRCS	=	./
 DIR_OBJS	=	./
 DIR_HDRS	=	./
