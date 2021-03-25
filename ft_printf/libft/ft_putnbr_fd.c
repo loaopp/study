@@ -6,7 +6,7 @@
 /*   By: yejeon <yejeon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/04 01:15:23 by yejeon            #+#    #+#             */
-/*   Updated: 2021/03/20 03:58:17 by yejeon           ###   ########.fr       */
+/*   Updated: 2021/03/25 11:49:54 by yejeon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static void	display_nbr(int n, int fd)
 	write(fd, &"0123456789"[n % 10], 1);
 }
 
-void	ft_putnbr_fd(int n, int fd)
+void		ft_putnbr_fd(int n, int fd)
 {
 	if (fd < 0)
 		return ;

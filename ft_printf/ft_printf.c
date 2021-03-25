@@ -6,7 +6,7 @@
 /*   By: yejeon <yejeon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 07:10:21 by yejeon            #+#    #+#             */
-/*   Updated: 2021/03/25 08:56:06 by yejeon           ###   ########.fr       */
+/*   Updated: 2021/03/25 12:14:05 by yejeon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,10 @@ static char	*set_info_w_l(va_list *ap, t_info *info, char *p)
 	if (*p == '*')
 	{
 		value = va_arg(*ap, int);
-		if (value < 0)
+		if (value < 0 && !info->dot)
 		{
-			if (!info->dot)
-			{
-				value *= -1;
-				info->flag = '-';
-			}
+			value *= -1;
+			info->flag = '-';
 		}
 		p++;
 	}
@@ -42,7 +39,7 @@ static char	*set_info_w_l(va_list *ap, t_info *info, char *p)
 	return (p);
 }
 
-static char *set_info(va_list *ap, t_info *info, char *p)
+static char	*set_info(va_list *ap, t_info *info, char *p)
 {
 	ft_memset(info, 0, sizeof(t_info));
 	while (is_flag(*p))
@@ -61,7 +58,7 @@ static char *set_info(va_list *ap, t_info *info, char *p)
 	return (p);
 }
 
-int	print_value(va_list *ap, t_info *info)
+int			print_value(va_list *ap, t_info *info)
 {
 	int		len;
 
@@ -103,13 +100,13 @@ static int	parse_format(va_list *ap, char *p)
 	return (len);
 }
 
-int		ft_printf(const char *format, ...)
+int			ft_printf(const char *format, ...)
 {
 	va_list	ap;
 	int		len;
 
 	va_start(ap, format);
-	len = parse_format(&ap, (char*)format);	
+	len = parse_format(&ap, (char*)format);
 	va_end(ap);
 	return (len);
 }

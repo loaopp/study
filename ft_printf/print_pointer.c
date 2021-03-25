@@ -6,7 +6,7 @@
 /*   By: yejeon <yejeon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/25 07:25:27 by yejeon            #+#    #+#             */
-/*   Updated: 2021/03/25 08:27:32 by yejeon           ###   ########.fr       */
+/*   Updated: 2021/03/25 11:42:06 by yejeon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static int	print_pointer_not_null(t_info *info, char *buf)
 {
 	int		len;
 	int		x;
-	
+
 	len = 0;
 	x = ft_strlen(buf);
 	if (info->flag != '-' && info->dot)
@@ -48,7 +48,7 @@ static int	print_pointer_not_null(t_info *info, char *buf)
 	return (len);
 }
 
-int		print_pointer(t_info *info, char *p)
+int			print_pointer(t_info *info, char *p)
 {
 	char	*buf;
 	int		len;

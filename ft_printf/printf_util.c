@@ -6,7 +6,7 @@
 /*   By: yejeon <yejeon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 02:59:56 by yejeon            #+#    #+#             */
-/*   Updated: 2021/03/25 11:11:52 by yejeon           ###   ########.fr       */
+/*   Updated: 2021/03/25 11:55:28 by yejeon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 char	is_type(char ch)
 {
-	const char	*p = ft_strchr(TYPE, ch); 
+	const char	*p = ft_strchr(TYPE, ch);
+
 	return (p ? *p : 0);
 }
 

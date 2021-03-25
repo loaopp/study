@@ -6,7 +6,7 @@
 /*   By: yejeon <yejeon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 00:47:46 by yejeon            #+#    #+#             */
-/*   Updated: 2021/03/25 11:11:36 by yejeon           ###   ########.fr       */
+/*   Updated: 2021/03/25 12:37:06 by yejeon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,12 +43,10 @@ int		print_str(t_info *info, char *s)
 		info->dot = 0;
 	if (info->dot && info->length < x)
 		x = info->length;
-	if (info->flag != '-' && info->type == '0')
+	if (info->flag == '0')
 		len += print_char_while('0', info->width - x);
-	else if (info->flag != '-' && info->type != '0')
+	else if (info->flag == 0)
 		len += print_char_while(' ', info->width - x);
-	if (info->type == '0')
-		print_char_while('0', info->width - x);	
 	len += write(1, s, x);
 	if (info->flag == '-')
 		len += print_char_while(' ', info->width - x);
