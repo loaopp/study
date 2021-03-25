@@ -1,4 +1,7 @@
-.vscode/
-*.exe
+*.json
+
+*.DS_Store
+
 *.out
 *.o
+*.a
