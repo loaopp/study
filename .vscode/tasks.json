@@ -7,9 +7,12 @@
 			"command": "/usr/bin/gcc",
 			"args": [
 				"-g",
+				"-Wall",
+				"-Wextra",
+				"-Werror",
 				"${file}",
 				"-o",
-				"${fileDirname}/a.out"//"${fileDirname}/${fileBasenameNoExtension}.out"
+				"${fileDirname}/a.out"
 			],
 			"options": {
 				"cwd": "${workspaceFolder}"

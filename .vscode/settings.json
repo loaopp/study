@@ -1,7 +1,15 @@
 {
-	"files.associations": {
-		"libft.h": "c",
-		"ft_printf.h": "c",
-		"_main": "c"
-	}
+	"42header.username": "yejeon",
+	"42header.email": "yejeon@student.42seoul.kr",
+	"C_Cpp.updateChannel": "Insiders",
+	"explorer.confirmDelete": false,
+	"editor.comments.insertSpace": false,
+	"editor.detectIndentation": false,
+	"editor.insertSpaces": false,
+	"editor.fontSize": 15,
+	"editor.tabSize": 4,
+	"editor.renderWhitespace": "all",
+	"files.eol": "\n",
+	"files.encoding": "utf8",
+	"files.insertFinalNewline": true
 }
