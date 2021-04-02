@@ -1,0 +1,25 @@
+FROM	debian:buster
+LABEL	maintainer="yejeon@student.42seoul.kr"
+EXPOSE	80 443
+
+ENV		DIR_HOME=/root
+ENV		DIR_PHPMYADMIN=/var/www/html/phpmyadmin
+ENV		DIR_WORDPRESS=/var/www/html/wordpress
+ENV		NAME_PHPMYADMIN=phpMyAdmin-5.1.0-all-languages.tar.gz
+ENV		NAME_WORDPRESS=wordpress-5.7.tar.gz
+
+WORKDIR	$DIR_HOME
+
+RUN		apt-get update && apt-get upgrade -y
+RUN		apt-get -y install vim
+RUN		apt-get -y install wget
+RUN		apt-get -y install nginx
+RUN		apt-get -y install openssl
+RUN		apt-get -y install mariadb-server
+RUN		apt-get -y install php7.3 php-mbstring php-xml php-cli php-fpm php-mysqli
+RUN		wget https://files.phpmyadmin.net/phpMyAdmin/5.1.0/phpMyAdmin-5.1.0-all-languages.tar.gz
+RUN		wget https://wordpress.org/wordpress-5.7.tar.gz
+
+COPY	./srcs/* $DIR_HOME
+
+ENTRYPOINT	["./run.sh"]
