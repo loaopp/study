@@ -6,7 +6,7 @@
 /*   By: yejeon <yejeon@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/14 08:25:23 by yejeon            #+#    #+#             */
-/*   Updated: 2021/01/25 19:59:52 by yejeon           ###   ########.fr       */
+/*   Updated: 2021/03/30 13:16:28 by yejeon           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ int		get_next_line(int fd, char **line)
 
 	if (fd < 0 || NULL == line || BUFFER_SIZE < 1)
 		return (-1);
+	size = 0;
 	if (0 == ft_strchr(str, '\n'))
 	{
 		while (0 < (size = read(fd, buf, BUFFER_SIZE)))
