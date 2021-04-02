@@ -20,6 +20,6 @@ RUN		apt-get -y install php7.3 php-mbstring php-xml php-cli php-fpm php-mysqli
 RUN		wget https://files.phpmyadmin.net/phpMyAdmin/5.1.0/phpMyAdmin-5.1.0-all-languages.tar.gz
 RUN		wget https://wordpress.org/wordpress-5.7.tar.gz
 
-COPY	./srcs/* $DIR_HOME
+COPY	./srcs/* $DIR_HOME/
 
 ENTRYPOINT	["./run.sh"]
